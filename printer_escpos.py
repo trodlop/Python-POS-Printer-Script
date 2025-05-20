@@ -17,8 +17,10 @@ p = Serial(devfile="COM1",
            stopbits=1,
            timeout=1.00)
 print("Intructions on use:")
-print("Simply type in the file name into the prompt and press enter")
-print("\nNote: that the file extension is also needed (for example, image1.jpeg)\nMaximum width for images is 500px")
+print("1) Move the desired image into a folder named 'printer' in the same directory as the script")
+print("2) Run the script")
+print("3) When prompted, type in the file name and press enter")
+print("\nNote: that the file extension is also needed (for example, image1.jpg)\nImages are automatically resized to be 500px wide")
 
 file_name = str(input("File name: "))
 resized_file_path = image_resize(file_name, 500)

@@ -8,10 +8,17 @@ SETUP:
 The root directory should be structured as follows:
 
 root/
-   ├── printer-escpos.py
+   ├── printer_escpos.py
    └── printer/
           ├── image1.jpg
           └── image2.jpg
+
+Note:
+   When entering the name of the file to print, the script automatically uses the path relative to the root directory by prepending printer/ to the filename.
+For example, entering image1.jpg will reference the file at printer/image1.jpg.
+
+   If your image is stored in a subdirectory within the printer folder, you must include that subdirectory in the filename.
+For example, entering subfolder/image2.jpg will reference the file at printer/subfolder/image2.jpg.
 
 
 PRINTING:

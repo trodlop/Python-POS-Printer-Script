@@ -5,12 +5,12 @@ import os
 # Set the width of the print area, ie. width of recipt
 print_area_width = 500
 
-def image_resize(path, target_width):
+def image_resize(file_name, path, target_width):
     image = Image.open(path)
     scaling_factor = (target_width / float(image.size[0]))
     target_height = int((float(image.size[1]) * float(scaling_factor)))
     resized_image = image.resize((target_width, target_height), Image.LANCZOS)
-    resized_image_path = "printer/" + "resized_" + path
+    resized_image_path = "printer/" + "resized_" + file_name
     resized_image.save(resized_image_path)
     return resized_image_path
 
@@ -24,7 +24,7 @@ p = Serial(devfile="COM1",
 # Print image:
 def print_image(file_name, path):
     
-    resized_file_path = image_resize(path, print_area_width)
+    resized_file_path = image_resize(file_name, path, print_area_width)
     
     print("Printing {}...".format(file_name))
     p.image(resized_file_path)

@@ -2,6 +2,8 @@ from escpos.printer import Serial
 from PIL import Image
 import os
 
+# GitHub page: https://github.com/trodlop/Python-POS-Printer-Script
+
 # Set the width of the print area, ie. width of recipt
 print_area_width = 500
 

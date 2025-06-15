@@ -2,6 +2,9 @@ from escpos.printer import Serial
 from PIL import Image
 import os
 
+# Set the width of the print area, ie. width of recipt
+print_area_width = 500
+
 def image_resize(path, target_width):
     image = Image.open(path)
     scaling_factor = (target_width / float(image.size[0]))
@@ -21,7 +24,7 @@ p = Serial(devfile="COM1",
 # Print image:
 def print_image(file_name, path):
     
-    resized_file_path = image_resize(path, 500)
+    resized_file_path = image_resize(path, print_area_width)
     
     print("Printing {}...".format(file_name))
     p.image(resized_file_path)

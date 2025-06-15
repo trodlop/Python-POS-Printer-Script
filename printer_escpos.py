@@ -29,6 +29,8 @@ def print_image(file_name, path):
     print("Printing {}...".format(file_name))
     p.image(resized_file_path)
     p.cut()
+    # delete temporary file
+    os.remove(resized_file_path)
         
 
 # Print txt file:

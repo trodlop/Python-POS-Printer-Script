@@ -3,7 +3,7 @@ Instructions on use:
 
 SETUP:
 • Create a folder within the root directory of the script named "printer"
-• Any image you wish to print must be placed in this folder
+• Any image or text file you wish to print must be placed in this folder
 
 The root directory should be structured as follows:
 
